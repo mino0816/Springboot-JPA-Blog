@@ -25,6 +25,7 @@ public class UserApiController {
 	@PostMapping("/auth/joinProc")
 	public ResponseDto<Integer> save(@RequestBody User user) { //ussername, password, email
 		System.out.println("UserApiController : save 호출됨");
+
 		//실제로 DB에 insert를 하고 아래에서 return 하면 됨
 		userService.회원가입(user);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);

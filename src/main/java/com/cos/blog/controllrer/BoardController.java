@@ -28,10 +28,17 @@ public class BoardController {
 		model.addAttribute( boardService.글상세보기(id));
 		return "board/detail"; //detail.jsp로 이동
 	}
+	@GetMapping("/board/{id}/updateForm")
+	public String updateForm(@PathVariable int id, Model model) {
+		model.addAttribute(boardService.글상세보기(id));
+		return "board/updateForm";
+	}
 	
 	//USER권한이 필요
 	@GetMapping("/board/saveForm")
 	public String saveForm() {
 		return "/board/saveForm";
 	}
+	
+	
 }
